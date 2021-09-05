@@ -1,131 +1,147 @@
 /* 
-Just Add NavBar Min-height In Media Query or Css File
+Where Will Be Use Hamburger Menu Their Change Navbar
+Min-height and Customize a Tag
 */
 
-*{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
-.container{
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
-  display: flex;
-  background: #333;
-  align-items: center;
+.container {
+   max-width: 1170px;
+   margin-left: auto;
+   margin-right: auto;
+   justify-content: space-between;
+   display: flex;
+   background: #333;
+   align-items: center;
 }
 
 
-/* navbar regular css start */
-a.site-logo {
-  font-size: 26px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
+/*
+=====================
+Start Hamburger Menu
+=====================
+*/
+
+.hamburger-menu {
+   display: none;
 }
+
 .site-navbar ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   display: flex;
+   position: absolute;
+   width: 100%;
+   height: calc(100vh - 60px);
+   left: 0;
+   top: 60px;
+   flex-direction: column;
+   align-items: center;
+   border-top: 1px solid #444;
+   background-color: rgba(0, 0, 0, .75);
+   max-height: 0;
+   overflow: hidden;
+   transition: .3s;
 }
+
+.site-navbar ul li {
+   width: 100%;
+   text-align: center;
+}
+
 .site-navbar ul li a {
-  color: #fff;
-  padding: 20px;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
+   color: #fff;
+   padding: 25px;
+   display: block;
+   text-decoration: none;
+   text-transform: uppercase;
 }
+
 .site-navbar ul li a:hover {
-  background: rgba(255,255,255,.1);
+   background: rgba(255, 255, 255, .1);
 }
-/* navbar regular css end */
+
+.site-navbar ul.open {
+   max-height: 100vh;
+   overflow: visible;
+}
+
 
 /* nav-toggler css start */
+
 .nav-toggler {
-  border: 3px solid #fff;
-  padding: 5px;
-  background-color: transparent;
-  cursor: pointer;
-  height: 39px;
-  display: none;
+   border: 3px solid #fff;
+   padding: 5px;
+   background-color: transparent;
+   cursor: pointer;
+   height: 39px;
 }
-.nav-toggler span, 
-.nav-toggler span:before, 
+
+.nav-toggler span,
+.nav-toggler span:before,
 .nav-toggler span:after {
-  width: 28px;
-  height: 3px;
-  background-color: #fff;
-  display: block;
-  transition: .3s;
+   width: 28px;
+   height: 3px;
+   background-color: #fff;
+   display: block;
+   transition: .3s;
 }
+
 .nav-toggler span:before {
-  content: '';
-  transform: translateY(-9px);
+   content: '';
+   transform: translateY(-9px);
 }
+
 .nav-toggler span:after {
-  content: '';
-  transform: translateY(6px);
+   content: '';
+   transform: translateY(6px);
 }
+
 .nav-toggler.toggler-open span {
-  background-color: transparent;
+   background-color: transparent;
 }
+
 .nav-toggler.toggler-open span:before {
-  transform: translateY(0px) rotate(45deg);
+   transform: translateY(0px) rotate(45deg);
 }
+
 .nav-toggler.toggler-open span:after {
-  transform: translateY(-3px) rotate(-45deg);
+   transform: translateY(-3px) rotate(-45deg);
 }
+
+
 /* nav-toggler css End */
 
 
-/*mobile breakpoint start */
+/*
+=====================
+End Hamburger Menu
+=====================
+*/
+
 @media screen and (max-width: 992px) {
-  .container {
-    max-width: 720px;
-  }
-  /* navbar css for mobile start */
-  .nav-toggler{
-    display: block;
-  }
-  .container {
-    min-height: 60px;
-  }
-  .site-navbar ul {
-    position: absolute;
-    width: 100%;
-    height: calc(100vh - 60px);
-    left: 0;
-    top: 60px;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid #444;
-    background-color: rgba(0,0,0,.75);
-    max-height: 0;
-    overflow: hidden;
-    transition: .3s;
-  }
-  .site-navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-  .site-navbar ul li a {
-    padding: 25px;
-  }
-  .site-navbar ul li a:hover {
-    background-color: rgba(255,255,255,.1);
-  }
-  .site-navbar ul.open {
-    max-height: 100vh;
-    overflow: visible;
-  }
- 
-  /* navbar css for mobile end */
+   .container {
+      max-width: 720px;
+      min-height: 60px;
+   }
+
+  /*
+  =====================
+  Start Hamburger Menu
+  =====================
+  */
+   .hamburger-menu {
+      display: block;
+   }
+   /*
+  =====================
+  End Hamburger Menu
+  =====================
+  */
+   
 }
-/* mobile breakpoint end */
-
-
